@@ -13,8 +13,6 @@ for _, source in ipairs({
     if not ok then vim.api.nvim_err_write('Failed to load ' .. source .. '\n\n' .. fault) end
 end
 
-vim.cmd('colorscheme tokyonight')
-
 -- Enable LSPs
 vim.lsp.enable({
     'lua_ls',
