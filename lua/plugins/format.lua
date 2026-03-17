@@ -10,25 +10,6 @@ return {
     event = { 'BufWinEnter', 'BufReadPost' },
     config = function()
         local null_ls = require('null-ls')
-        local diagnostics = {
-            underline = true,
-            virtual_text = true,
-            severity_sort = true,
-            update_in_insert = false,
-
-            signs = {
-                text = {
-                    [vim.diagnostic.severity.ERROR] = '󰅚 ',
-                    [vim.diagnostic.severity.WARN] = '󰅚 ',
-                    [vim.diagnostic.severity.INFO] = '󰅚 ',
-                    [vim.diagnostic.severity.HINT] = '󰌶 ',
-                },
-                numhl = {
-                    [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-                    [vim.diagnostic.severity.WARN] = 'WarningMsg',
-                },
-            },
-        }
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.stylua.with({
@@ -39,9 +20,6 @@ return {
                         '--quote-style=AutoPreferSingle',
                         '--line-endings=Unix',
                     },
-                }),
-                null_ls.builtins.diagnostics.selene.with({
-                    diagnostic_config = diagnostics,
                 }),
                 null_ls.builtins.formatting.black,
                 null_ls.builtins.formatting.isort,

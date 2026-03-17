@@ -12,5 +12,7 @@ return {
         require('mini.cmdline').setup()
         require('mini.pick').setup()
         require('mini.trailspace').setup()
+        require('mini.pairs').setup()
+        require('mini.bracketed').setup()
     end,
 }

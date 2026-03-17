@@ -32,3 +32,10 @@ autocmd('LspAttach', {
         )
     end,
 })
+
+autocmd('BufWritePost', {
+    callback = function(event)
+        _ = event
+        require('lint').try_lint()
+    end,
+})

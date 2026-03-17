@@ -12,8 +12,8 @@ return {
 
                     luasnip.add_snippets('zig', require('snippets.zig'))
                     luasnip.add_snippets('c', require('snippets.c'))
-                    luasnip.add_snippets('cpp', require('snippets.cpp'))
                     luasnip.add_snippets('cpp', require('snippets.c'))
+                    luasnip.add_snippets('cpp', require('snippets.cpp'))
                 end,
             },
         },
